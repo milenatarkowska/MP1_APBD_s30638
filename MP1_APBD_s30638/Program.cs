@@ -34,5 +34,12 @@ public class Program
         Serwis.DodajUżytkownika(student2);
         Serwis.DodajUżytkownika(wykładowca);
         Serwis.DodajUżytkownika(pracownikAdministracji);
+        
+        Console.WriteLine("WYPOŻYCZANIE");
+        var wypożyczenie1 = new Wypożyczenie(student1, macbook);
+        var wypożyczenie2 = new Wypożyczenie(student1, monitor);
+        var wypożyczenie3 = new Wypożyczenie(student1, pc); // powinno nie działać
+        var wypożyczenie4 = new Wypożyczenie(student2, macbook); //powinno nie działać
+        
     }
 }
