@@ -2,8 +2,8 @@ namespace MP1_APBD_s30638.Users;
 
 public abstract class Użytkownik
 {
-   protected string Imie { get; set; }
-   protected string Nazwisko { get; set; }
+   public string Imie { get; private set; }
+   public string Nazwisko { get; private set; }
    protected string Id {get; set;}
    protected TypUżytkownika Typ { get; set; }
 
@@ -14,4 +14,5 @@ public abstract class Użytkownik
            Nazwisko = nazwisko;
            Typ = typ;
        }
+   
 }
