@@ -32,4 +32,14 @@ public class Serwis
             Console.WriteLine($"{s.Nazwa} - Status: {s.Status}");
         }
     }
+
+    public void WyświetlDostępne()
+    {
+        var dostepne = _sprzęt.Where(s => s.Status == StatusSprzętu.Dostępny);
+    
+        foreach (var s in dostepne)
+        {
+            Console.WriteLine($"Wolny sprzęt: {s.Nazwa}");
+        }
+    }
 }

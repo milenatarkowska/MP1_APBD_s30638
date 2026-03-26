@@ -47,7 +47,9 @@ public class Program
         Console.WriteLine("WYŚWIETLANIE LISTY CAŁEGO SPRZĘTU ZE STATUSEM");
         Serwis.WyświetlCałySprzęt();
         
-        Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
+        Console.WriteLine("\n");
         
+        Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
+        Serwis.WyświetlDostępne();
     }
 }
