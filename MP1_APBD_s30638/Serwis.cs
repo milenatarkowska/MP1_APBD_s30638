@@ -11,7 +11,7 @@ public class Serwis
     public void DodajUżytkownika(Użytkownik użytkownik)
     {
         _użytkownicy.Add(użytkownik);
-        Console.WriteLine("Dodano nowego użytkownika: " + użytkownik);
+        Console.WriteLine("Dodano nowego użytkownika: " + użytkownik.ToString());
     }
 
     public List<Użytkownik> PobierzWszystkichUżytkowników()
@@ -25,8 +25,11 @@ public class Serwis
         Console.WriteLine("Dodano nowy sprzęt: " + sprzęt);
     }
 
-    public List<Sprzęt> PobierzCałySprzęt()
+    public void WyświetlCałySprzęt()
     {
-        return _sprzęt.ToList();
+        foreach (var s in _sprzęt)
+        {
+            Console.WriteLine($"{s.Nazwa} - Status: {s.Status}");
+        }
     }
 }

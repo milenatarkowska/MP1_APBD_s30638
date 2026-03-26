@@ -37,9 +37,17 @@ public class Program
         
         Console.WriteLine("WYPOŻYCZANIE");
         var wypożyczenie1 = new Wypożyczenie(student1, macbook);
+        Console.WriteLine("\n");
         var wypożyczenie2 = new Wypożyczenie(student1, monitor);
+        Console.WriteLine("\n");
         var wypożyczenie3 = new Wypożyczenie(student1, pc); // powinno nie działać
+        Console.WriteLine("\n");
         var wypożyczenie4 = new Wypożyczenie(student2, macbook); //powinno nie działać
+        
+        Console.WriteLine("WYŚWIETLANIE LISTY CAŁEGO SPRZĘTU ZE STATUSEM");
+        Serwis.WyświetlCałySprzęt();
+        
+        Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
         
     }
 }
