@@ -39,6 +39,7 @@ public class Program
         var wypożyczenie1 = new Wypożyczenie(student1, macbook);
         Console.WriteLine("\n");
         var wypożyczenie2 = new Wypożyczenie(student1, monitor);
+        wypożyczenie2.PrzesunTerminWsteczDlaTestu(20);
         Console.WriteLine("\n");
         var wypożyczenie3 = new Wypożyczenie(student1, pc); // powinno nie działać
         Console.WriteLine("\n");
@@ -51,5 +52,16 @@ public class Program
         
         Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
         Serwis.WyświetlDostępne();
+        
+        Console.WriteLine("\n");
+        
+        Console.WriteLine("ZWROTY");
+        wypożyczenie1.Zwróć(); //terminowy
+        wypożyczenie2.Zwróć(); //po terminie
+        
+        Console.WriteLine("\n");
+        
+        Console.WriteLine("RAPORT KOŃCOWY");
+        
     }
 }
