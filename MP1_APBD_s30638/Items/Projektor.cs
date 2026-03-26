@@ -10,4 +10,9 @@ public class Projektor : Sprzęt
         Jasnosc = jasnosc;
         Kontrast = kontrast;
     }
+    
+    public override string ToString()
+    {
+        return "Projektor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny+ "\n";
+    }
 }

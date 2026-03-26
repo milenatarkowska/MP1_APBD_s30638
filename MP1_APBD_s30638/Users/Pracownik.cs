@@ -8,4 +8,9 @@ public class Pracownik : Użytkownik
     {
         Stanowisko = stanowisko;
     }
+    
+    public override string ToString()
+    {
+        return "Pracownik \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Stanowwisko: " + Stanowisko + "\n";
+    }
 }

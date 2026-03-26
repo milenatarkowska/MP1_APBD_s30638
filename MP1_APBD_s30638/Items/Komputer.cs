@@ -14,4 +14,9 @@ public class Komputer : Sprzęt
         SystemOperacyjny = systemOperacyjny;
         TypKomputera = typKomputera;
     }
+
+    public override string ToString()
+    {
+        return "Komputer" + "\n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Typ: " + TypKomputera + "\n";
+    }
 }

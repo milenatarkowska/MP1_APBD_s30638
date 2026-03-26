@@ -10,4 +10,9 @@ public class Monitor : Sprzęt
         Przekatna = przekatna;
         Rozdzielczosc = rozdzielczosc;
     }
+    
+    public override string ToString()
+    {
+        return "Monitor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Przekątna: " + Przekatna + "\n";
+    }
 }

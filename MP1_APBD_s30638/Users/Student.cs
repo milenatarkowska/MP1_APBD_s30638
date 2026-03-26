@@ -13,4 +13,9 @@ public class Student : Użytkownik
         SemestrStudiów = semestrStudiów;
         RokStudiów = rokStudiów;
     }
+
+    public override string ToString()
+    {
+        return "Student \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Numer indeksu: " + NumerIndeksu + "\n";
+    }
 }
