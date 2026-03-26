@@ -10,7 +10,7 @@ public class Program
     {
         Console.WriteLine("========== SYSTEM UCZELNIANY DO WYPOŻYCZANIA SPRZĘTU ELEKTRONICZNEGO ==========");
 
-        var Serwis = new Serwis();
+        var serwis = new Serwis();
         
         Console.WriteLine("DODAWANIE SPRZĘTU");
         var macbook = new Komputer("MacBook Pro", StatusSprzętu.Dostępny, "Apple", "12345ABCDE", "M5 PRO", 48, "Mac OS", TypKomputera.Laptop);
@@ -18,10 +18,10 @@ public class Program
         var monitor = new Monitor("Samsung Odyssey OLED G9", StatusSprzętu.Dostępny, "Samsung", "10293UHBGT", 49, "5120 x 1440");
         var projektor = new Projektor("Epson EH-TW840", StatusSprzętu.Dostępny, "Epson", "67543VSKTE", 4000, "16000:1");
         
-        Serwis.DodajSprzęt(macbook);
-        Serwis.DodajSprzęt(pc);
-        Serwis.DodajSprzęt(monitor);
-        Serwis.DodajSprzęt(projektor);
+        serwis.DodajSprzęt(macbook);
+        serwis.DodajSprzęt(pc);
+        serwis.DodajSprzęt(monitor);
+        serwis.DodajSprzęt(projektor);
         
         Console.WriteLine("DODAWANIE UŻYTKOWNIKÓW");
         var student1 = new Student("Anna", "Nowak", TypUżytkownika.Student, "s12345", 5, 3);
@@ -30,38 +30,55 @@ public class Program
         var pracownikAdministracji = new Pracownik("Katarzyna", "Wojciechowska", TypUżytkownika.PracownikAdministracji,
             "Specjalista ds. rekrutacji");
         
-        Serwis.DodajUżytkownika(student1);
-        Serwis.DodajUżytkownika(student2);
-        Serwis.DodajUżytkownika(wykładowca);
-        Serwis.DodajUżytkownika(pracownikAdministracji);
+        serwis.DodajUżytkownika(student1);
+        serwis.DodajUżytkownika(student2);
+        serwis.DodajUżytkownika(wykładowca);
+        serwis.DodajUżytkownika(pracownikAdministracji);
         
         Console.WriteLine("WYPOŻYCZANIE");
-        var wypożyczenie1 = new Wypożyczenie(student1, macbook);
+        serwis.Wypożycz(macbook, student1);
         Console.WriteLine("\n");
-        var wypożyczenie2 = new Wypożyczenie(student1, monitor);
-        wypożyczenie2.PrzesunTerminWsteczDlaTestu(20);
+        serwis.Wypożycz(monitor, student1);
         Console.WriteLine("\n");
-        var wypożyczenie3 = new Wypożyczenie(student1, pc); // powinno nie działać
+        serwis.Wypożycz(pc, student1); //nie powinno działac
         Console.WriteLine("\n");
-        var wypożyczenie4 = new Wypożyczenie(student2, macbook); //powinno nie działać
+        serwis.Wypożycz(monitor, student2); //nie powinno działac
+        
+        Console.WriteLine("\n");
         
         Console.WriteLine("WYŚWIETLANIE LISTY CAŁEGO SPRZĘTU ZE STATUSEM");
-        Serwis.WyświetlCałySprzęt();
+        serwis.WyświetlCałySprzęt();
         
         Console.WriteLine("\n");
         
-        Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
-        Serwis.WyświetlDostępne();
+        Console.WriteLine("USTAWIENIE SPRZĘTU JAKO NIEDOSTĘPNY");
+        projektor.UstawJakoNiedostępny();
         
         Console.WriteLine("\n");
         
         Console.WriteLine("ZWROTY");
-        wypożyczenie1.Zwróć(); //terminowy
-        wypożyczenie2.Zwróć(); //po terminie
+        serwis.Zwróć(macbook); //terminowy
+        Console.WriteLine("\n");
+        serwis.Zwróć(monitor); //po terminie
+        
+        Console.WriteLine("\n");
+        
+        Console.WriteLine("WYŚWIETLANIE LISTY SPRZĘTU DOSTĘPNEGO DO WYPOŻYCZENIA");
+        serwis.WyświetlDostępne();
+        
+        Console.WriteLine("\n");
+        
+        Console.WriteLine("AKTYWNE WYPOŻYCZENIA DLA UŻYTKOWNIKA");
+        serwis.WyswietlAktywneDlaUzytkownika(student1);
+        
+        Console.WriteLine("\n");
+        
+        Console.WriteLine("PRZETERMINOWANE WYPOŻYCZENIA");
+        serwis.WyswietlPrzeterminowane();
         
         Console.WriteLine("\n");
         
         Console.WriteLine("RAPORT KOŃCOWY");
-        
+        serwis.GenerujRaport();
     }
 }
