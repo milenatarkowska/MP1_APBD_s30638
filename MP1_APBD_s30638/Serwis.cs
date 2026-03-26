@@ -121,4 +121,14 @@ public class Serwis
             if (w.FaktycznyZwrot == null && w.TerminZwrotu < DateTime.Now)
                 Console.WriteLine($"- {w.Sprzęt.Nazwa} u {w.Użytkownik.Nazwisko}");
     }
+
+    public void GenerujRaport()
+    {
+        Console.WriteLine("----------WYGENEROWANY RAPORT SYSTEMU----------");
+        Console.WriteLine($"Liczba sprzętu: {_sprzęt.Count}");
+        Console.WriteLine($"Liczba użytkowników: {_użytkownicy.Count}");
+        int aktywne = 0;
+        foreach(var w in _wypożyczenia) if(w.FaktycznyZwrot == null) aktywne++;
+        Console.WriteLine($"Aktywne wypożyczenia: {aktywne}");
+    }
 }
