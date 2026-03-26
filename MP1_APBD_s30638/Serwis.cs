@@ -105,4 +105,20 @@ public class Serwis
         
         sprzet.UstawJakoDostępny();
     }
+    
+    public void WyswietlAktywneDlaUzytkownika(Użytkownik u)
+    {
+        Console.WriteLine($"Aktywne wypożyczenia dla: {u.Imie} {u.Nazwisko}");
+        foreach (var w in _wypożyczenia)
+            if (w.Użytkownik == u && w.FaktycznyZwrot == null)
+                Console.WriteLine($"- {w.Sprzęt.Nazwa} (Termin: {w.TerminZwrotu})");
+    }
+    
+    public void WyswietlPrzeterminowane()
+    {
+        Console.WriteLine("Przeterminowane wypożyczenia");
+        foreach (var w in _wypożyczenia)
+            if (w.FaktycznyZwrot == null && w.TerminZwrotu < DateTime.Now)
+                Console.WriteLine($"- {w.Sprzęt.Nazwa} u {w.Użytkownik.Nazwisko}");
+    }
 }
