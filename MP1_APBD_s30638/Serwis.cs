@@ -66,7 +66,7 @@ public class Serwis
     
     public void Zwróć(Sprzęt sprzet)
     {
-        Wypożyczenie aktywneWypozyczenie = null;
+        Wypożyczenie? aktywneWypozyczenie = null;
         
         foreach (var w in _wypożyczenia)
         {
