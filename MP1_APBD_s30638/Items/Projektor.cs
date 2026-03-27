@@ -13,6 +13,6 @@ public class Projektor : Sprzęt
     
     public override string ToString()
     {
-        return "Projektor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny+ "\n";
+        return "Projektor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny+ "\n" + "ID: " + Id + "\n";
     }
 }

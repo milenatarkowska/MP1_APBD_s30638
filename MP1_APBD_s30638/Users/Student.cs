@@ -16,6 +16,6 @@ public class Student : Użytkownik
 
     public override string ToString()
     {
-        return "Student \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Numer indeksu: " + NumerIndeksu + "\n";
+        return "Student \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Numer indeksu: " + NumerIndeksu + "\n" + "ID: " + Id + "\n";
     }
 }

@@ -11,6 +11,6 @@ public class Pracownik : Użytkownik
     
     public override string ToString()
     {
-        return "Pracownik \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Stanowwisko: " + Stanowisko + "\n";
+        return "Pracownik \n" + "Imie: " + Imie + "\n" + "Nazwisko: " + Nazwisko + "\n" + "Stanowwisko: " + Stanowisko + "\n" + "ID: " + Id + "\n";
     }
 }

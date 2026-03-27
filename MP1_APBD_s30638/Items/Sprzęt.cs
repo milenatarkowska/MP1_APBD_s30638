@@ -20,7 +20,7 @@ public abstract class Sprzęt
     public void UstawJakoNiedostępny()
     {
         if (Status == StatusSprzętu.Wypożyczony)
-            Console.WriteLine("Nie można oznaczyć jako niedostępny - sprzęt jest wypożyczony");
+            Console.WriteLine($"Nie można oznaczyć {Nazwa} jako niedostępny - sprzęt jest wypożyczony");
         Status = StatusSprzętu.Niedostępny;
         Console.WriteLine($"Ustawiono jako niedostępny {Nazwa}");
     }
@@ -28,18 +28,18 @@ public abstract class Sprzęt
     public void UstawJakoDostępny()
     {
         if (Status != StatusSprzętu.Wypożyczony)
-            Console.WriteLine("Nie można zwrócić. Sprzęt nie jest wypożyczony");
+            Console.WriteLine($"Nie można zwrócić {Nazwa}. Sprzęt nie jest wypożyczony");
         Status = StatusSprzętu.Dostępny;
-        Console.WriteLine("Ustawiono jako dostępny;");
+        Console.WriteLine($"Ustawiono {Nazwa} jako dostępny;");
     }
 
     public void UstawJakoWypożyczony()
     {
         if (Status != StatusSprzętu.Dostępny)
         {
-            Console.WriteLine($"Nie można wypożyczyć - sprzęt jest {Status}");
+            Console.WriteLine($"Nie można wypożyczyć {Nazwa} - sprzęt jest {Status}");
         }
         Status = StatusSprzętu.Wypożyczony;
-        Console.WriteLine("Ustawionio jako wypożyczony");
+        Console.WriteLine($"Ustawionio {Nazwa} jako wypożyczony");
     }
 }

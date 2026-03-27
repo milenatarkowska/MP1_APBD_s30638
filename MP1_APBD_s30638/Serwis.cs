@@ -13,12 +13,7 @@ public class Serwis
         _użytkownicy.Add(użytkownik);
         Console.WriteLine("Dodano nowego użytkownika: " + użytkownik.ToString());
     }
-
-    public List<Użytkownik> PobierzWszystkichUżytkowników()
-    {
-        return _użytkownicy.ToList();
-    }
-
+    
     public void DodajSprzęt(Sprzęt sprzęt)
     {
         _sprzęt.Add(sprzęt);

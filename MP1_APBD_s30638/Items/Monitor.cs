@@ -13,6 +13,6 @@ public class Monitor : Sprzęt
     
     public override string ToString()
     {
-        return "Monitor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Przekątna: " + Przekatna + "\n";
+        return "Monitor \n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Przekątna: " + Przekatna + "\n" + "ID: " + Id + "\n";
     }
 }

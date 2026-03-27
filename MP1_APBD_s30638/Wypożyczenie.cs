@@ -13,8 +13,6 @@ public class Wypożyczenie
     public Sprzęt Sprzęt  { get; set; }
     private bool CzyPrzekroczonoTermin { get; set; }
     private string Id { get; set; }
-    private bool CzyAktywne => !FaktycznyZwrot.HasValue;
-    private bool CzyPoTerminie => CzyAktywne && DateTime.Now > TerminZwrotu;
 
     public Wypożyczenie(Użytkownik użytkownik, Sprzęt sprzęt, int okresWypożyczenia = 14)
     {

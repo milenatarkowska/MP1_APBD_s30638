@@ -17,6 +17,6 @@ public class Komputer : Sprzęt
 
     public override string ToString()
     {
-        return "Komputer" + "\n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Typ: " + TypKomputera + "\n";
+        return "Komputer" + "\n" + "Nazwa: " + Nazwa + "\n" + "Producent: " + Producent + "\n"  + "NumerSeryjny: " + NumerSeryjny + "\n" + "Typ: " + TypKomputera + "\n" + "ID: " + Id + "\n";
     }
 }
